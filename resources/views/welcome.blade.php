@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div>
-                    Hello First Page!
+                    Hello World!
                 </div>
                 <a href="{{ route('sample') }}">
                     新規ページへ
