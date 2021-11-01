@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\PostRequest;//Postモデルを使う
+use App\Post;                       //Postモデルを使う //すいません原因を見つけました！
 use Illuminate\Support\Facades\Auto;//ログイン機能を使う
 class PostController extends Controller
 {
