@@ -14,16 +14,14 @@
 //     return view('welcome');       //課題7コメントアウト
 // });                               //課題7コメントアウト
 
-
+Route::get('sample', 'SampleController@index')->name('sample');
 Auth::routes();                                             //課題6追加
 Route::get('/home', 'HomeController@index')->name('home');  //課題6追加
 
-Route::get('sample', 'SampleController@index')->name('sample');
-
-Route::get('/', 'PostController@index')->name('post.index');
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('post/create', 'PostController@create')->name('post.create');
-    Route::post('post/create', 'PostController@store')->name('post.store');
+Route::get('/', 'PostController@index')->name('post.index');                 //課題7追加
+Route::group(['middleware' => 'auth'], function () {                         //課題7追加
+    Route::get('post/create', 'PostController@create')->name('post.create'); //課題7追加
+    Route::post('post/create', 'PostController@store')->name('post.store');  //課題7追加
 });
 
 
