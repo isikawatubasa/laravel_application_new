@@ -10,8 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('sample', 'SampleController@index')->name('sample');
 
@@ -21,7 +21,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('post/create', 'PostController@store')->name('post.store');
 });
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
