@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index()//投稿一覧画面表示
     {
-        $posts = Post::all;//モデルから投稿を全件取得として表示する
+        $posts = Post::all();//モデルから投稿を全件取得として表示する
         return view('posts.index', ['posts' => $posts]);//取得したデータをビューに変数として渡す
     }
 
