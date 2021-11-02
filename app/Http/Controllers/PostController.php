@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;  //Postモデルを使う
 use App\Post;                       //削除していました。mm
-use Illuminate\Support\Facades\Auto;//ログイン機能を使う
+use Illuminate\Support\Facades\Auth;//ログイン機能を使う  //タイプミスmm
 class PostController extends Controller
 {
     public function index()//投稿一覧画面表示
@@ -25,6 +25,7 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->body = $request->body;
         $post->user_id = Auth::id();//Auth::id()でログインユーザーのIDが取得できる
+
         $post->save();//インスタンスをDBのレコードとして保存
         return redirect()->route('post.index');//投稿一覧画面にれダイレクトさせる
     }
