@@ -33,7 +33,27 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::findOrFail($id);    // 投稿データのIDでモデルから投稿を1件取得
-
         return view('posts.show', ['post' => $post]); // show.blade.phpを表示する(これから作成)
+    }
+
+    public function edit($id)
+    {
+        $post = Post::findOrFail($id);  //投稿データのIDでモデルから投稿を1件取得
+        if ($post->user_id !== Auth::id()) {  //投稿者以外の編集を防ぐ
+            return redirect('/');
+        }
+        return view('posts.edit', ['post' => $post]);  //edit.blade.phpを表示する（これから作成）
+    }
+
+    public function update(PostRequest $request, $id)
+    {
+        $post = Post::findOrFail($id);  //投稿データのIDでモデルから投稿を1件取得
+        if ($post->user_id !== Auth::id()) {  //投稿者以外の更新を防ぐ
+            return redirect('/');
+        }
+        $post->title = $request->title;  //編集者画面から受け取ったデータをインスタンスに反映
+        $post->body = $request->body;
+        $post->save();  //DBのレコードを更新
+        return redirect('/');
     }
 }

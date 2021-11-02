@@ -23,6 +23,8 @@ Route::group(['middleware' => 'auth'], function () {                         //�
     Route::get('post/create', 'PostController@create')->name('post.create'); //課題7追加
     Route::post('post/create', 'PostController@store')->name('post.store');  //課題7追加
     Route::get('post/{id}/show', 'PostController@show')->name('post.show');  //課題8追加
+    Route::get('post/{id}/edit', 'PostController@edit')->name('post.edit');  //課題9追加
+    Route::post('post/{id}/update', 'PostController@update')->name('post.update');//課題9追加
 });
 
 
