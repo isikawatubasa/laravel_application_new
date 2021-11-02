@@ -29,4 +29,11 @@ class PostController extends Controller
         $post->save();//インスタンスをDBのレコードとして保存
         return redirect()->route('post.index');//投稿一覧画面にれダイレクトさせる
     }
+
+    public function show($id)
+    {
+        $post = Post::findOrFail($id);    // 投稿データのIDでモデルから投稿を1件取得
+
+        return view('posts.show', ['post' => $post]); // show.blade.phpを表示する(これから作成)
+    }
 }

@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="col-md-6 mx-auto">
-        <a class="btn btn-primary btn-md" href="{{ route('post.create') }}">
-            <i class="far fa-create"></i>＋新規投稿する
+        <a class="btn btn-primary btn-sm" href="{{ route('post.show', ['id' => $post->id]) }}">
+            <i class="far fa-show"></i>詳細
         </a>
         @foreach ($posts as $post)
             <div class="card-wrap">
