@@ -16,8 +16,7 @@
                 </p>
                 <div class="text-right">
                     @if ($post->user_id === Auth::id())
-                    <a class="btn btn-success btn-sm" href="{{ route('post.edit', ['id' => $post->id]) }}
-                        ">
+                    <a class="btn btn-success btn-sm" href="{{ route('post.edit', ['id' => $post->id]) }}">
                         <i class="far fa-edit"></i>編集
                     </a>
                     <a class="btn btn-danger btn-sm" rel="nofollow" href="#">
