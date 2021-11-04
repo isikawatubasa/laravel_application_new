@@ -26,6 +26,7 @@ Route::group(['middleware' => 'auth'], function () {                         //�
     Route::get('post/{id}/edit', 'PostController@edit')->name('post.edit');  //課題9追加
     Route::post('post/{id}/update', 'PostController@update')->name('post.update');//課題9追加
     Route::get('post/{id}/delete', 'PostController@delete')->name('post.delete');//課題10追加
+    Route::get('/hello', 'HelloController@index')->name('hello');
 });
 
 
