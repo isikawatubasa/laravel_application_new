@@ -56,4 +56,14 @@ class PostController extends Controller
         $post->save();  //DBのレコードを更新
         return redirect('/');
     }
+
+    public function delete($id)
+    {
+        $post = Post::findOrFail($id);
+        if ($post->user_id !== Auth::id()) {
+            return redirect('/');
+        }
+        $post->delete();
+        return redirect('/');
+    }
 }
