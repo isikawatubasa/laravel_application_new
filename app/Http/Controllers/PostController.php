@@ -16,7 +16,22 @@ class PostController extends Controller
 
     public function create()//登録画面表示（投稿）
     {
-        return view('posts.create');//create.blade.phpを表示する（これを作成）
+        //return view('posts.create');//create.blade.phpを表示する（これを作成）
+        dd('「投稿画面だよ！」');
+        //$note = "ノート";
+        //dd($note);
+        //$cart_list = [
+        //    'cart_item1' => [
+        //        'product' => 'ノート',
+        //        'quantity' => '2'
+        //    ],
+        //    'cart_item2' => [
+        //        'product' => 'ボールペン',
+        //        'quantity' => '3'
+        //    ],
+        //];
+
+        //dd($cart_list);
     }
 
     public function store(PostRequest $request)//登録処理（投稿）
