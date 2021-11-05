@@ -16,22 +16,9 @@ class PostController extends Controller
 
     public function create()//登録画面表示（投稿）
     {
-        //return view('posts.create');//create.blade.phpを表示する（これを作成）
-        dd('「投稿画面だよ！」');
-        //$note = "ノート";
-        //dd($note);
-        //$cart_list = [
-        //    'cart_item1' => [
-        //        'product' => 'ノート',
-        //        'quantity' => '2'
-        //    ],
-        //    'cart_item2' => [
-        //        'product' => 'ボールペン',
-        //        'quantity' => '3'
-        //    ],
-        //];
+        dd('「投稿画面だよ！」');   //課題11
+        return view('posts.create');//create.blade.phpを表示する（これを作成）
 
-        //dd($cart_list);
     }
 
     public function store(PostRequest $request)//登録処理（投稿）
@@ -57,7 +44,8 @@ class PostController extends Controller
         if ($post->user_id !== Auth::id()) {  //投稿者以外の編集を防ぐ
             return redirect('/');
         }
-        return view('posts.edit', ['post' => $post]);  //edit.blade.phpを表示する（これから作成）
+        //return view('posts.edit', ['post' => $post]);  //edit.blade.phpを表示する（これから作成）
+        dd($post);   //課題11
     }
 
     public function update(PostRequest $request, $id)
