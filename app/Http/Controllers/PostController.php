@@ -44,8 +44,9 @@ class PostController extends Controller
         if ($post->user_id !== Auth::id()) {  //投稿者以外の編集を防ぐ
             return redirect('/');
         }
-        //return view('posts.edit', ['post' => $post]);  //edit.blade.phpを表示する（これから作成）
         dd($post);   //課題11
+        return view('posts.edit', ['post' => $post]);  //edit.blade.phpを表示する（これから作成）
+        //dd($post);   //課題11　修正
     }
 
     public function update(PostRequest $request, $id)
